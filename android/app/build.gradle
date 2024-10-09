@@ -1,0 +1,209 @@
+import java.text.SimpleDateFormat
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+
+def versionMajor = 0
+def versionMinor = 0
+def versionPatch = 1
+def versionBuild = createVersionBuild()
+
+static def createVersionBuild() {
+    def datePattern = 'yyMMddHHmmss'
+    def timeZone = 'GMT+7'
+
+    def dateFormat = new SimpleDateFormat(datePattern)
+    dateFormat.setTimeZone(TimeZone.getTimeZone(timeZone))
+
+    def date = new Date()
+    return dateFormat.format(date)
+}
+
+android {
+    namespace 'id.ac.ugm.sv.trpl.glucosemonitoring'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "id.ac.ugm.sv.trpl.glucosemonitoring"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "$versionMajor.$versionMinor.$versionPatch"
+
+        testInstrumentationRunner "id.ac.ugm.sv.trpl.glucosemonitoring.HiltTestRunner"
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        // End-user, stable version
+        release {
+            debuggable false
+
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+
+        // End-user, beta version
+        beta {
+            debuggable false
+
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+
+            versionNameSuffix "-beta${versionBuild}"
+        }
+
+        // Internal test, non-technical team
+        alpha {
+            debuggable true
+
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+
+            versionNameSuffix "-alpha${versionBuild}"
+        }
+
+        // Internal test, technical team
+        debug {
+            debuggable true
+
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+
+            versionNameSuffix "-dev${versionBuild}"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+        coreLibraryDesugaringEnabled true
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose true
+        viewBinding true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "$composeCompilerVersion"
+    }
+
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            merges += "META-INF/LICENSE.md"
+            merges += "META-INF/LICENSE-notice.md"
+        }
+    }
+
+    secrets {
+        propertiesFileName = "secrets.properties"
+    }
+}
+
+dependencies {
+    // Android Jetpack
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.core:core-ktx:$coreVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycleVersion"
+
+    // Jetpack Compose - UI toolkit
+    implementation platform("androidx.compose:compose-bom:$composeVersion")
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.ui:ui-graphics"
+    implementation 'androidx.test:rules:1.5.0'
+    debugImplementation "androidx.compose.ui:ui-tooling"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
+    implementation "androidx.compose.material3:material3"
+    implementation "androidx.activity:activity-compose:$activityVersion"
+    implementation "androidx.constraintlayout:constraintlayout-compose:$constraintLayoutComposeVersion"
+    implementation "androidx.compose.runtime:runtime-rxjava3"
+
+    // Desugaring - Java 8+ APIs
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$desugarJdkLibsVersion"
+
+    // Navigation - in-app navigation
+    implementation "androidx.navigation:navigation-compose:$navigationVersion"
+
+    // Preferences DataStore - persistent storage
+    implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
+    implementation "androidx.datastore:datastore-preferences-rxjava3:$dataStoreVersion"
+
+    // Room - persistent storage
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-rxjava3:$roomVersion"
+
+    // Retrofit - REST client
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
+
+    // Moshi - JSON parser
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
+
+    // Chucker - network logging
+    debugImplementation "com.github.chuckerteam.chucker:library:$chuckerVersion"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
+
+    // RxJava - reactive programming
+    implementation "io.reactivex.rxjava3:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxAndroidVersion"
+
+    // Hilt - dependency injection
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+    implementation "androidx.hilt:hilt-navigation-compose:$hiltNavigationComposeVersion"
+
+    // LeakCanary - memory leak detection
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanaryVersion"
+
+    // MPAndroidChart - charting library
+    implementation "com.github.PhilJay:MPAndroidChart:$mpAndroidChartVersion"
+
+    // Sheets Compose Dialogs - composable date and time picker
+    implementation "com.maxkeppeler.sheets-compose-dialogs:core:$sheetsComposeDialogsVersion"
+    implementation "com.maxkeppeler.sheets-compose-dialogs:calendar:$sheetsComposeDialogsVersion"
+    implementation "com.maxkeppeler.sheets-compose-dialogs:clock:$sheetsComposeDialogsVersion"
+
+    // Local tests
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "com.google.truth:truth:$truthVersion"
+    testImplementation "io.mockk:mockk:$mockkVersion"
+
+    // Instrumented tests
+    androidTestImplementation "com.google.dagger:hilt-android-testing:2.46.1"
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.46.1'
+    androidTestImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
+    androidTestImplementation "com.google.truth:truth:$truthVersion"
+    androidTestImplementation "androidx.test.ext:junit:$junitExtVersion"
+    androidTestImplementation 'androidx.test:core-ktx:1.5.0'
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:4.9.3"
+    androidTestImplementation "io.mockk:mockk:$mockkVersion"
+    androidTestImplementation "androidx.test:runner:1.5.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.4.3"
+}

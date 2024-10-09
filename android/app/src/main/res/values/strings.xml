@@ -1,0 +1,156 @@
+<resources>
+
+    <string name="app_name">Glucover</string>
+
+    <string name="data_unavailable">Data belum tersedia</string>
+    <string name="today">Hari ini</string>
+    <string name="yesterday">Kemarin</string>
+    <string name="btn_cd_back">Kembali ke halaman sebelumnya</string>
+
+    <string name="glucose_unit">mg/dL</string>
+    <string name="weight_unit">kg</string>
+    <string name="height_unit">cm</string>
+    <string name="blood_pressure_unit">mmHg</string>
+
+    <string name="txt_welcome_login">Selamat Datang</string>
+    <string name="txt_desc_login">Silakan masuk dengan akun Anda</string>
+    <string name="edt_placeholder_email_login">Masukkan email…</string>
+    <string name="edt_placeholder_password_login">Masukkan kata sandi…</string>
+    <string name="btn_login_login">Masuk</string>
+    <string name="toast_failed_unknown_login">Masuk akun gagal, mohon coba lagi</string>
+
+    <string name="btn_cd_profile_home">Lihat profil</string>
+    <string name="txt_hello_home">Halo,</string>
+    <string name="txt_latest_glucose_category_home">Gula darah %1$s</string>
+    <string name="txt_cd_latest_glucose_category_home">Kadar gula darah saat ini</string>
+    <string name="txt_last_seen_glucose_home">%1$s sejak terakhir dilihat %2$s</string>
+    <string name="txt_title_glucose_chart_home">Hari ini, %1$s, pukul %2$s</string>
+    <string name="btn_details_home">Lihat selengkapnya</string>
+    <string name="tv_last_events_home">Aktivitas terakhir</string>
+    <string name="btn_add_event_home">Tambah</string>
+    <string name="btn_event_list_home">Lihat semua catatan</string>
+
+    <string name="txt_top_title_monitoringdetails">Detail</string>
+    <string name="txt_bottom_title_monitoringdetails">pemantauan</string>
+    <string name="txt_title_glucose_chart_monitoringdetails">Data %1$s</string>
+    <string name='txt_tir_monitoringdetails'>Waktu dalam jangkauan</string>
+    <string name="txt_tir_value_monitoringdetails">Time in range (TIR):</string>
+    <string name="txt_recommendations_monitoringdetails">Rekomendasi</string>
+    <string name="txt_recommended_value_monitoringdetails">Direkomendasikan %1$s</string>
+
+    <string name="txt_top_title_eventlist">Log</string>
+    <string name="txt_bottom_title_eventlist">aktivitas</string>
+    <string name="btn_add_event_eventlist">Catat aktivitas baru</string>
+
+    <string name="txt_glucose_increase_eventdetails">Gula darah naik</string>
+    <string name="txt_glucose_decrease_eventdetails">Gula darah turun</string>
+    <string name="txt_glucose_no_change_eventdetails">Gula darah tidak berubah</string>
+    <string name="txt_affected_by_eventdetails">Perubahan gula darah juga dapat dipengaruhi oleh aktivitas berikut yang dilakukan sebelum/setelah aktivitas ini:</string>
+    <string name="btn_edit_eventdetails">Edit</string>
+
+    <string name="txt_top_title_add_eventform">Catat</string>
+    <string name="txt_bottom_title_add_eventform">aktivitas baru</string>
+    <string name="txt_top_title_edit_eventform">Edit</string>
+    <string name="txt_bottom_title_edit_eventform">aktivitas</string>
+    <string name="txt_type_eventform">Pilih jenis aktivitas</string>
+    <string name="txt_desc_meal_eventform">Nama makanan</string>
+    <string name="edt_placeholder_desc_meal_eventform">Apa saja yang Anda makan/minum?</string>
+    <string name="edt_helper_desc_meal_eventform">Contoh: Nasi merah, ikan, bayam</string>
+    <string name="txt_desc_exercise_eventform">Jenis olahraga</string>
+    <string name="edt_placeholder_desc_exercise_eventform">Apa olahraga/aktivitas fisik yang Anda lakukan?</string>
+    <string name="edt_helper_desc_exercise_eventform">Contoh: Jalan pagi 30 menit</string>
+    <string name="txt_desc_medication_eventform">Nama obat</string>
+    <string name="edt_placeholder_desc_medication_eventform">Apa obat yang Anda konsumsi?</string>
+    <string name="edt_helper_desc_medication_eventform">Contoh: Insulin</string>
+    <string name="txt_datetime_eventform">Masukkan jam</string>
+    <string name="chip_cd_datetime_eventform">Pilih tanggal dan jam</string>
+    <string name="btn_save_eventform">Simpan</string>
+    <string name="btn_delete_eventform">Hapus</string>
+    <string name="toast_success_add_eventform">Aktivitas berhasil ditambahkan</string>
+    <string name="toast_success_edit_eventform">Aktivitas berhasil diedit</string>
+    <string name="toast_success_delete_eventform">Aktivitas berhasil dihapus</string>
+    <string name="toast_failed_add_eventform">Gagal menambahkan aktivitas, mohon coba lagi</string>
+    <string name="toast_failed_edit_eventform">Gagal mengedit aktivitas, mohon coba lagi</string>
+    <string name="toast_failed_delete_eventform">Gagal menghapus aktivitas, mohon coba lagi</string>
+
+    <string name="txt_health_numbers_profile">Angka medis</string>
+    <string name="btn_update_health_numbers_profile">Perbarui</string>
+    <string name="txt_settings_profile">Pengaturan</string>
+    <string name="txt_enable_glucose_alarms_profile">Nyalakan peringatan real-time untuk hipo/hiperglikemia</string>
+    <string name="txt_account_profile">Akun</string>
+    <string name="btn_logout_profile">Keluar</string>
+    <string name="toast_failed_notification_permission_profile">Izin notifikasi tidak diberikan. Mohon berikan izin melalui setelan perangkat.</string>
+
+    <string name="txt_top_title_healthnumbersform">Perbarui</string>
+    <string name="txt_bottom_title_healthnumbersform">angka medis</string>
+    <string name="txt_disclaimer_healthnumbersform">Angka medis berikut digunakan untuk memberikan rekomendasi perawatan diabetes yang lebih lengkap.</string>
+    <string name="txt_blood_pressure_healthnumbersform">Tekanan darah (mmHg)</string>
+    <string name="edt_placeholder_systolic_healthnumbersform">Masukkan sistolik…</string>
+    <string name="edt_helper_systolic_healthnumbersform">Sistolik</string>
+    <string name="edt_placeholder_diastolic_healthnumbersform">Masukkan diastolik…</string>
+    <string name="edt_helper_diastolic_healthnumbersform">Diastolik</string>
+    <string name="txt_weight_healthnumbersform">Berat badan (kg)</string>
+    <string name="edt_placeholder_weight_healthnumbersform">Masukkan berat badan…</string>
+    <string name="txt_height_healthnumbersform">Tinggi badan (cm)</string>
+    <string name="edt_placeholder_height_healthnumbersform">Masukkan tinggi badan…</string>
+    <string name="btn_save_healthnumbersform">Simpan</string>
+
+    <string name="notif_channel_id_glucosealarms">GLUCOSE_ALARMS</string>
+    <string name="notif_channel_name_glucosealarms">Peringatan hipo/hiperglikemia</string>
+    <string name="notif_channel_description_glucosealarms">Menampilkan peringatan setiap kejadian hipoglikemia dan hiperglikemia</string>
+    <string name="notif_title_starting_glucosealarms">Peringatan hipo/hiperglikemia</string>
+    <string name="notif_content_starting_glucosealarms">Sedang memantau gula darah…</string>
+    <string name="notif_content_dangerously_low_glucosealarms">Kadar gula darah Anda sangat rendah!</string>
+    <string name="notif_content_low_glucosealarms">Kadar gula darah Anda rendah!</string>
+    <string name="notif_content_high_glucosealarms">Kadar gula darah Anda tinggi!</string>
+    <string name="notif_content_dangerously_high_glucosealarms">Kadar gula darah Anda sangat tinggi!</string>
+    <string name="notif_content_towards_high_glucosealarms">Kadar gula darah Anda cenderung tinggi.</string>
+    <string name="notif_content_towards_low_glucosealarms">Kadar gula darah Anda cenderung rendah.</string>
+    <string name="notif_content_normal_glucosealarms">Kadar gula darah Anda dalam jangkauan.</string>
+
+    <string name="txt_blood_glucose_glucosechart">Gula darah</string>
+    <string name="txt_upper_limit_glucosechart">Batas Atas</string>
+    <string name="txt_lower_limit_glucosechart">Batas Bawah</string>
+    <string name="btn_cd_expand_glucosechart">Buka diagram di layar penuh</string>
+
+    <string name="txt_last_value_glucosestats">Nilai terakhir</string>
+    <string name="txt_average_glucosestats">Rata-rata</string>
+    <string name="txt_max_glucosestats">Nilai tertinggi</string>
+    <string name="txt_min_glucosestats">Nilai terendah</string>
+
+    <string name="txt_time_in_range_tirchart">Dalam jangkauan</string>
+    <string name="txt_time_above_range_tirchart">Di atas jangkauan</string>
+    <string name="txt_time_below_range_tirchart">Di bawah jangkauan</string>
+
+    <string name="glucose_category_hyperglycemia_level_2">Sangat tinggi</string>
+    <string name="glucose_category_hyperglycemia_level_1">Di atas jangkauan</string>
+    <string name="glucose_category_in_range">Dalam jangkauan</string>
+    <string name="glucose_category_hypoglycemia_level_2">Di bawah jangkauan</string>
+    <string name="glucose_category_hypoglycemia_level_1">Sangat rendah</string>
+    <string name="glucose_category_unknown">—</string>
+
+    <string name="monitoring_details_period_filter_last_24_hour">24 jam</string>
+    <string name="monitoring_details_period_filter_seven_days">7 hari</string>
+    <string name="monitoring_details_period_filter_fourteen_days">14 hari</string>
+    <string name="monitoring_details_period_filter_thirty_days">30 hari</string>
+    <string name="monitoring_details_period_filter_ninety_days">90 hari</string>
+    <string name="monitoring_details_period_filter_custom">Pilih…</string>
+
+    <string name="event_type_option_meal">Makan</string>
+    <string name="event_type_option_exercise">Olahraga</string>
+    <string name="event_type_option_medication">Konsumsi obat</string>
+
+    <string name="blood_pressure_category_normal">Normal</string>
+    <string name="blood_pressure_category_elevated">Meningkat</string>
+    <string name="blood_pressure_category_hypertension_stage_1">Hipertensi tahap 1</string>
+    <string name="blood_pressure_category_hypertension_stage_2">Hipertensi tahap 2</string>
+    <string name="blood_pressure_category_hypertensive_crisis">Krisis hipertensi</string>
+
+    <string name="weight_status_underweight">Berat badan rendah</string>
+    <string name="weight_status_normal_weight">Berat badan normal</string>
+    <string name="weight_status_overweight">Berat badan berlebih</string>
+    <string name="weight_status_obesity_class_1">Obesitas kelas 1</string>
+    <string name="weight_status_obesity_class_2">Obesitas kelas 2</string>
+    <string name="weight_status_obesity_class_3">Obesitas kelas 3</string>
+
+</resources>

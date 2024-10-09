@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/lyt_rounded_background"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="120dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        tools:text="11.40, 22 Apr 2023" />
+
+    <TextView
+        android:id="@+id/txt_glucose_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="4dp"
+        android:drawableStart="@drawable/ic_blood_24"
+        android:drawablePadding="1dp"
+        android:gravity="center"
+        android:maxWidth="120dp"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:ignore="UseCompatTextViewDrawableXml"
+        tools:text="100 mg/dL" />
+
+    <TextView
+        android:id="@+id/txt_glucose_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_glucose_level"
+        android:layout_centerHorizontal="true"
+        android:ellipsize="end"
+        android:maxWidth="120dp"
+        android:maxLines="4"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        tools:text="Dalam jangkauan" />
+
+</RelativeLayout>
